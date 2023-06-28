@@ -1,0 +1,114 @@
+﻿Holiday Name,State,StartDate,EndDatetime
+New Year's Day,act,1/01/2021 0:00,01/01/2021 23:45
+Australia Day,act,26/01/2021 0:00,26/01/2021 23:45
+Canberra Day,act,8/03/2021 0:00,08/03/2021 23:45
+Good Friday,act,2/04/2021 0:00,02/04/2021 23:45
+Easter Saturday,act,3/04/2021 0:00,03/04/2021 23:45
+Easter Sunday,act,4/04/2021 0:00,04/04/2021 23:45
+Easter Monday,act,5/04/2021 0:00,05/04/2021 23:45
+Anzac Day,act,26/04/2021 0:00,26/04/2021 23:45
+Reconciliation Day,act,31/05/2021 0:00,31/05/2021 23:45
+Queen's Birthday,act,14/06/2021 0:00,14/06/2021 23:45
+Labour Day,act,4/10/2021 0:00,04/10/2021 23:45
+Christmas Day ,act,25/12/2021 0:00,25/12/2021 23:45
+Boxing Day,act,26/12/2021 0:00,26/12/2021 23:45
+Christmas (additional day),act,27/12/2021 0:00,27/12/2021 23:45
+Boxing Day (additional day),act,28/12/2021 0:00,28/12/2021 23:45
+New Year's Day,nsw,1/01/2021 0:00,01/01/2021 23:45
+Australia Day,nsw,26/01/2021 0:00,26/01/2021 23:45
+Good Friday,nsw,2/04/2021 0:00,02/04/2021 23:45
+Easter Saturday,nsw,3/04/2021 0:00,03/04/2021 23:45
+Easter Sunday,nsw,4/04/2021 0:00,04/04/2021 23:45
+Easter Monday,nsw,5/04/2021 0:00,05/04/2021 23:45
+Anzac Day,nsw,25/04/2021 0:00,25/04/2021 23:45
+Queen's Birthday,nsw,14/06/2021 0:00,14/06/2021 23:45
+Bank Holiday,nsw,2/08/2021 0:00,02/08/2021 23:45
+Labour Day,nsw,4/10/2021 0:00,04/10/2021 23:45
+Christmas Day ,nsw,25/12/2021 0:00,25/12/2021 23:45
+Boxing Day,nsw,26/12/2021 0:00,26/12/2021 23:45
+Christmas (additional day),nsw,27/12/2021 0:00,27/12/2021 23:45
+Boxing Day (additional day),nsw,28/12/2021 0:00,28/12/2021 23:45
+New Year's Day,nt,1/01/2021 0:00,01/01/2021 23:45
+Australia Day,nt,26/01/2021 0:00,26/01/2021 23:45
+Good Friday,nt,2/04/2021 0:00,02/04/2021 23:45
+Easter Saturday,nt,3/04/2021 0:00,03/04/2021 23:45
+Easter Monday,nt,5/04/2021 0:00,05/04/2021 23:45
+Anzac Day,nt,26/04/2021 0:00,26/04/2021 23:45
+May Day,nt,3/05/2021 0:00,03/05/2021 23:45
+Queen's Birthday,nt,14/06/2021 0:00,14/06/2021 23:45
+Picnic Day,nt,2/08/2021 0:00,02/08/2021 23:45
+Christmas Eve 7pm - Midnight,nt,24/12/2021 0:00,24/12/2021 23:45
+Christmas Day ,nt,25/12/2021 0:00,25/12/2021 23:45
+Boxing Day,nt,26/12/2021 0:00,26/12/2021 23:45
+Christmas (additional day),nt,27/12/2021 0:00,27/12/2021 23:45
+Boxing Day (additional day),nt,28/12/2021 0:00,28/12/2021 23:45
+New Year's Eve 7pm - Midnight,nt,31/12/2021 0:00,31/12/2021 23:45
+New Year's Day,qld,1/01/2021 0:00,01/01/2021 23:45
+Australia Day,qld,26/01/2021 0:00,26/01/2021 23:45
+Good Friday,qld,2/04/2021 0:00,02/04/2021 23:45
+The Day after Good Friday,qld,3/04/2021 0:00,03/04/2021 23:45
+Easter Sunday,qld,4/04/2021 0:00,04/04/2021 23:45
+Easter Monday,qld,5/04/2021 0:00,05/04/2021 23:45
+Anzac Day,qld,26/04/2021 0:00,26/04/2021 23:45
+Labour Day,qld,3/05/2021 0:00,03/05/2021 23:45
+Queen's Birthday,qld,4/10/2021 0:00,04/10/2021 23:45
+Christmas Eve 6pm - Midnight,qld,24/12/2021 0:00,24/12/2021 23:45
+Christmas Day ,qld,25/12/2021 0:00,25/12/2021 23:45
+Boxing Day,qld,26/12/2021 0:00,26/12/2021 23:45
+Christmas (additional day),qld,27/12/2021 0:00,27/12/2021 23:45
+Boxing Day (additional day),qld,28/12/2021 0:00,28/12/2021 23:45
+New Year's Day,sa,1/01/2021 0:00,01/01/2021 23:45
+Australia Day,sa,26/01/2021 0:00,26/01/2021 23:45
+Adelaide Cup Day,sa,8/03/2021 0:00,08/03/2021 23:45
+Good Friday,sa,2/04/2021 0:00,02/04/2021 23:45
+Easter Saturday,sa,3/04/2021 0:00,03/04/2021 23:45
+Easter Monday,sa,5/04/2021 0:00,05/04/2021 23:45
+Anzac Day (additional day),sa,26/04/2021 0:00,26/04/2021 23:45
+Queen's Birthday,sa,14/06/2021 0:00,14/06/2021 23:45
+Labour Day,sa,4/10/2021 0:00,04/10/2021 23:45
+Christmas Eve  7pm - Midnight,sa,24/12/2021 0:00,24/12/2021 23:45
+Christmas Day ,sa,25/12/2021 0:00,25/12/2021 23:45
+Boxing Day / Proclamation Day,sa,26/12/2021 0:00,26/12/2021 23:45
+Christmas (additional day),sa,27/12/2021 0:00,27/12/2021 23:45
+Boxing Day / Proclamation Day (additional day),sa,28/12/2021 0:00,28/12/2021 23:45
+New Year's Eve 7pm - Midnight,sa,31/12/2021 0:00,31/12/2021 23:45
+New Year's Day,tas,1/01/2021 0:00,01/01/2021 23:45
+Australia Day,tas,26/01/2021 0:00,26/01/2021 23:45
+Eight Hours Day,tas,8/03/2021 0:00,08/03/2021 23:45
+Good Friday,tas,2/04/2021 0:00,02/04/2021 23:45
+Easter Monday,tas,5/04/2021 0:00,05/04/2021 23:45
+Easter Tuesday,tas,6/04/2021 0:00,06/04/2021 23:45
+Anzac Day,tas,25/04/2021 0:00,25/04/2021 23:45
+Queen's Birthday,tas,14/06/2021 0:00,14/06/2021 23:45
+Christmas Day,tas,25/12/2021 0:00,25/12/2021 23:45
+Boxing Day,tas,26/12/2021 0:00,26/12/2021 23:45
+Christmas (additional day),tas,27/12/2021 0:00,27/12/2021 23:45
+Boxing Day (additional day),tas,28/12/2021 0:00,28/12/2021 23:45
+New Year's Day,vic,1/01/2021 0:00,01/01/2021 23:45
+Australia Day,vic,26/01/2021 0:00,26/01/2021 23:45
+Labour Day,vic,8/03/2021 0:00,08/03/2021 23:45
+Good Friday,vic,2/04/2021 0:00,02/04/2021 23:45
+Saturday before Easter Sunday,vic,3/04/2021 0:00,03/04/2021 23:45
+Easter Sunday,vic,4/04/2021 0:00,04/04/2021 23:45
+Easter Monday,vic,5/04/2021 0:00,05/04/2021 23:45
+Anzac Day,vic,25/04/2021 0:00,25/04/2021 23:45
+Queen's Birthday,vic,14/06/2021 0:00,14/06/2021 23:45
+Friday before AFL Grand Final,vic,24/09/2021 0:00,24/09/2021 23:45
+Melbourne Cup,vic,2/11/2021 0:00,02/11/2021 23:45
+Christmas Day,vic,25/12/2021 0:00,25/12/2021 23:45
+Boxing Day,vic,26/12/2021 0:00,26/12/2021 23:45
+Christmas (additional day),vic,27/12/2021 0:00,27/12/2021 23:45
+Boxing Day (additional day),vic,28/12/2021 0:00,28/12/2021 23:45
+New Year's Day,wa,1/01/2021 0:00,01/01/2021 23:45
+Australia Day,wa,26/01/2021 0:00,26/01/2021 23:45
+Labour Day,wa,1/03/2021 0:00,01/03/2021 23:45
+Good Friday,wa,2/04/2021 0:00,02/04/2021 23:45
+Easter Monday,wa,5/04/2021 0:00,05/04/2021 23:45
+Anzac Day,wa,25/04/2021 0:00,25/04/2021 23:45
+Anzac Day (additional day),wa,26/04/2021 0:00,26/04/2021 23:45
+Western Australia Day,wa,7/06/2021 0:00,07/06/2021 23:45
+Queen's Birthday,wa,27/09/2021 0:00,27/09/2021 23:45
+Christmas Day ,wa,25/12/2021 0:00,25/12/2021 23:45
+Boxing Day,wa,26/12/2021 0:00,26/12/2021 23:45
+Christmas (additional day),wa,27/12/2021 0:00,27/12/2021 23:45
+Boxing Day (additional day),wa,28/12/2021 0:00,28/12/2021 23:45

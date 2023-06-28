@@ -1,0 +1,15 @@
+Connect-MsolService
+
+$CSVPath = C:\temp\groups.csv
+ 
+#Get All Office 365 Groups
+$O365Groups=Get-MSOLgroup
+ForEach ($Group in $O365Groups)
+{
+    Write-Host "Group Name:" $Group.DisplayName -ForegroundColor Green
+    Write-Host "Group ID" $Group.ObjectId
+    Get-msolgroupmember –groupobjectid $Group.objectid
+ 
+    #Get Group Members and export to CSV
+    Get-msolgroupmember –Groupobjectid $Group.objectid | Export-CSV -Path C:\temp\users.csv -NoTypeInformation -Append
+}

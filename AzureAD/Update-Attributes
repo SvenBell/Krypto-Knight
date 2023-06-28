@@ -1,0 +1,29 @@
+#CSV and Path
+$rootPath = "C:\temp\VES\user.csv"
+$promotions = Import-Csv -Path $rootPath
+
+foreach($user in $promotions){
+    # Find user
+
+    $name = $user.Username
+    $firstname = $user.'First name'
+    $lastname = $user.'Last name'
+    $job = $user.'Job title'
+    $department = $user.Department
+    $officenumber = $user.'Office phone'
+
+ 
+    $ADUser = get-azureaduser -filter "MailNickName eq '$name'"
+
+    Write-Host Found User $ADUser.UserPrincipalName
+
+    Write-Host Updating User Information
+
+    if ($ADUser){
+        Set-azureaduser -ObjectId $ADUser.ObjectId -JobTitle $job -Department $department
+        write-host $ADUser.UserPrincipalName updated Job Title $job and Department $department
+    }else{
+        Write-Warning ("Failed to update $ADUser.UserPrincipalName")
+    }
+    
+    }

@@ -1,0 +1,1 @@
+https://adamtheautomator.com/azure-vm-schedule/#Creating_the_PowerShell_Script

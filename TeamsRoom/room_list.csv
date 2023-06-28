@@ -1,0 +1,3 @@
+name,newRoom,label,roomcapacity,AudioDeviceName,DisplayDeviceName,VideoDeviceName,Building,City,Floor,GeoCoordinates
+Phi,phi@argonlaw.com.au,3rd Meeting Room (large room),12,Yealink A20,TV,Yealink A20,Argon Law,Sunshine Coast,1,-26.6595043; 153.0828992
+Pi,pi@argonlaw.com.au,2nd Meeting Room (middle room),6,Yealink A20,TV,Yealink A20,Argon Law,Sunshine Coast,1,-26.6595043; 153.0828992

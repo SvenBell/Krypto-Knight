@@ -1,0 +1,16 @@
+AADisplayName,AAName,AATimeZone,RADisplayName,RAUPNPrefix,UPNSuffix,CQDisplayName,CQName,CQRAName,CQRoutingMethod,CQAllowOptOut,CQAlertTime,CQTimeout,CQConferenceMode
+AA-Protector,AA-Protector,E. Australia Standard Time,AA-Protector,AA-Protector,multistoresolutions.onmicrosoft.com,CQ-ProBunnings,CQ-ProBunnings,CQ-ProBunnings,Attendant,On,15,15,On
+,AA-Protector,E. Australia Standard Time,AA-Protector-61754765022,AA-Protector-61754765022,multistoresolutions.onmicrosoft.com,CQ-ProCommercial,CQ-ProCommercial,CQ-ProCommercial,Attendant,On,15,15,On
+AA-Star,AA-Star,E. Australia Standard Time,AA-Star,AA-Star,multistoresolutions.onmicrosoft.com,CQ-ProPurchasing,CQ-ProPurchasing,CQ-ProPurchasing,Attendant,On,15,15,On
+,AA-Star,E. Australia Standard Time,AA-Star-61732086799,AA-Star-61732086799,multistoresolutions.onmicrosoft.com,CQ-ProAccounts,CQ-ProAccounts,CQ-ProAccounts,Attendant,On,15,15,On
+,,,,,multistoresolutions.onmicrosoft.com,CQ-ProHR,CQ-ProHR,CQ-ProHR,Attendant,On,15,15,On
+,,,,,multistoresolutions.onmicrosoft.com,CQ-ProProductComplicance,CQ-ProProductComplicance,CQ-ProProductComplicance,Attendant,On,15,15,On
+,,,,,multistoresolutions.onmicrosoft.com,CQ-ProEnquiries,CQ-ProEnquiries,CQ-ProEnquiries,Attendant,On,15,15,On
+,,,,,multistoresolutions.onmicrosoft.com,CQ-ProOverflow,CQ-ProOverflow,CQ-ProOverflow,Attendant,On,30,30,On
+,,,,,multistoresolutions.onmicrosoft.com,CQ-StarBunnings,CQ-StarBunnings,CQ-StarBunnings,Attendant,On,15,15,On
+,,,,,multistoresolutions.onmicrosoft.com,CQ-StarCommercial,CQ-StarCommercial,CQ-StarCommercial,Attendant,On,15,15,On
+,,,,,multistoresolutions.onmicrosoft.com,CQ-StarPurchasing,CQ-StarPurchasing,CQ-StarPurchasing,Attendant,On,15,15,On
+,,,,,multistoresolutions.onmicrosoft.com,CQ-StarAccounts,CQ-StarAccounts,CQ-StarAccounts,Attendant,On,15,15,On
+,,,,,multistoresolutions.onmicrosoft.com,CQ-StarHR,CQ-StarHR,CQ-StarHR,Attendant,On,15,15,On
+,,,,,multistoresolutions.onmicrosoft.com,CQ-StarEnquiries,CQ-StarEnquiries,CQ-StarEnquiries,Attendant,On,15,15,On
+,,,,,multistoresolutions.onmicrosoft.com,CQ-StarOverflow,CQ-StarOverflow,CQ-StarOverflow,Attendant,On,30,30,On
