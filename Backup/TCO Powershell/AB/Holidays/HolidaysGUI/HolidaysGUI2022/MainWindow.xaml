@@ -1,0 +1,22 @@
+﻿<Window x:Class="HolidaysGUI2022.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HolidaysGUI2022"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush TileMode="Tile" ImageSource="Entag Background.png"/>
+        </Grid.Background>
+        <RadioButton Content="QLD" HorizontalAlignment="Left" Margin="91,119,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <RadioButton Content="NSW" HorizontalAlignment="Left" Margin="91,157,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <RadioButton Content="VIC" HorizontalAlignment="Left" Margin="91,196,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Button Content="Submit" HorizontalAlignment="Left" Margin="508,340,0,0" VerticalAlignment="Top" Width="100" Height="39"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="673,340,0,0" VerticalAlignment="Top" Width="100" Height="39" IsCancel="True"/>
+        <Image HorizontalAlignment="Left" Height="114" Margin="576,0,0,0" VerticalAlignment="Top" Width="208" Source="Entag Logo White Transparent Background-02.png"/>
+        <Label Content="Select state for holiday schedule" HorizontalAlignment="Left" Margin="91,47,0,0" VerticalAlignment="Top" Height="44" Width="307" Foreground="White" FontSize="20"/>
+
+    </Grid>
+</Window>

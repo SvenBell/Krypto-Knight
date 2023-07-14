@@ -1,0 +1,1 @@
+﻿#Configure Team voicemail: https://erik365.blog/2022/05/26/configure-microsoft-teams-voicemail/

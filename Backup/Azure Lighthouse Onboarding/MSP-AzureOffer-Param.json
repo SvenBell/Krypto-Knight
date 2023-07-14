@@ -1,0 +1,29 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "mspOfferName": {
+            "value": "Entag Managed Services - Full ICT"
+        },
+        "mspOfferDescription": {
+            "value": "Entag Managed Services - Full ICT"
+        },
+        "managedByTenantId": {
+            "value": "987ff695-4851-4e95-b1e7-7a1cfcd763c8"
+        },
+        "authorizations": {
+            "value":[
+				{
+					"principalId":"b157efb4-802c-428a-a673-73f03b329272",
+					"principalIdDisplayName":"Teir 1 Support",
+					"roleDefinitionId":"acdd72a7-3385-48ef-bd42-f606fba81ae7"
+				},
+				{
+					"principalId":"c9f27253-c90e-4de5-862f-2a6325891058",
+					"principalIdDisplayName":"Teir 2 Support",
+					"roleDefinitionId":"b24988ac-6180-42a0-ab88-20f7382dd24c"
+				}
+			]
+        }
+    }
+}

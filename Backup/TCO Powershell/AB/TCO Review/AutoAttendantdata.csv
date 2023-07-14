@@ -1,0 +1,2 @@
+"Name","Identity","ApplicationInstances","LanguageId","Operator","TimeZoneId","VoiceResponseEnabled","Schedules"
+"AA-Main","047f3996-b02b-46c1-b766-fcff70371afa","58852183-1a29-46cb-b2a6-72c31e54a4d1","en-AU",,"E. Australia Standard Time","False","Microsoft.Rtc.Management.Hosted.Online.Models.Schedule Microsoft.Rtc.Management.Hosted.Online.Models.Schedule"

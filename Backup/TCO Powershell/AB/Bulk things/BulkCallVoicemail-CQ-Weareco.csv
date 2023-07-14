@@ -1,0 +1,4 @@
+Voicedisplayname,voicealias,callqueue,timeout
+Sales Voicemail,Sales-Voicemail,CQ-Sales,15
+Despatch Voicemail,Despatch-Voicemail,CQ-Despatch,15
+Accounts Voicemail,Accounts-Voicemail,CQ-Accounts,15
