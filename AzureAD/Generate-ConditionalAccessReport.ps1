@@ -29,21 +29,17 @@
     PowerShell Script used to generate Conditional Access Policies.
     Created by: Donovan du Val
     Creation Date: 13 May 2020
-    Last Updated: 20 Feb 2023 - Added filtering to HTML report.
 .DESCRIPTION
     The script will generate a report for all the Conditional Access Policies used in the Azure AD Tenant.
 .EXAMPLE
     Generates a report in the CSV and HTML format
-    PS C:\> Generate-ConditionalAccessReport.ps1 -OutputFormat All
+    PS C:\> Generate-ConditionalAccessReport.ps1 -OutputFormat All -TenantID <TenantID>
 .EXAMPLE
     Generates a report in the CSV format
     PS C:\> Generate-ConditionalAccessReport.ps1 -OutputFormat CSV
 .EXAMPLE
     Generates a report in the HTML format
     PS C:\> Generate-ConditionalAccessReport.ps1 -OutputFormat HTML    
-.EXAMPLE
-    Generates a report in the CSV format using the Graph Beta profile
-    PS C:\> Generate-ConditionalAccessReport.ps1 -OutputFormat CSV -BetaProfile $true
 .INPUTS
    No inputs
 .OUTPUTS
@@ -52,23 +48,41 @@
     The script will connect to the Microsoft Graph service and collect the required information. 
     To install the latest modules:
     Install-Module Microsoft.Graph -AllowClobber -Force
+
     If there are any missing policies, then rerun the script using the Beta profile parameter and compare the output.
+
     If PowerShell logs an error message for MaximumFunctionCount or MaximumVariableCount. This can be increased using the below.
     
     $MaximumFunctionCount = 8192 
     $MaximumVariableCount = 8192
+
+    Updates:
+    25 Apr 2023: Added improved filtering to HTML report, updated module versions.
+    21 Jun 2023: Updated module version, 
+                  improved module imports to reduce run time, 
+                  added All parameter for collecting policies,
+                  default to beta profile for collecting policies. 
+
 .LINK
     Github 
     https://github.com/microsoftgraph/msgraph-sdk-powershell 
     Microsoft Graph PowerShell Module
     https://www.powershellgallery.com/packages/Microsoft.Graph
+	
+	Ref. https://github.com/Donovand4/ConditionalAccessPolicyReport
 #>
 [CmdletBinding()]
 param (
 [Parameter(Mandatory = $true, Position = 0)] [ValidateSet('All', 'CSV', 'HTML')] $OutputFormat,
-    [Parameter(Mandatory = $False)] [String] $TenantID,
-    [Parameter(Mandatory = $False)] [String] [ValidateSet($true)] $BetaProfile
+    [Parameter(Mandatory = $False, Position = 1)] [String] $TenantID
+    #,[Parameter(Mandatory = $False, Position = 2)] [ValidateSet('True', 'False')] $BetaProfile = 'true'
 )
+#Requires -Version 5.1
+#Requires -Modules @{ ModuleName="Microsoft.Graph.Authentication"; ModuleVersion="1.28.0" }
+#Requires -Modules @{ ModuleName="Microsoft.Graph.Identity.SignIns"; ModuleVersion="1.28.0" }
+#Requires -Modules @{ ModuleName="Microsoft.Graph.Applications"; ModuleVersion="1.28.0" }
+#Requires -Modules @{ ModuleName="Microsoft.Graph.Users"; ModuleVersion="1.28.0" }
+#Requires -Modules @{ ModuleName="Microsoft.Graph.Groups"; ModuleVersion="1.28.0" }
 #
 #$OutputFormat = "All"
 #$TenantID = "6fdf5dae-a46c-4794-9ee2-686b35662117" #Healthy North Coast
@@ -78,7 +92,6 @@ param (
 Begin {
     Clear-Host
     Write-Host 'Importing the modules...'
-    Import-Module Microsoft.Graph.Authentication, Microsoft.Graph.Identity.SignIns, Microsoft.Graph.Applications, Microsoft.Graph.Users, Microsoft.Graph.Groups
 
     Write-Host 'Logging into Microsoft Graph' -ForegroundColor Green
     if ($TenantID.Length -eq 0) {
@@ -103,12 +116,16 @@ Begin {
         }
     }
 
-    if ($BetaProfile -eq $true)
-    {
-        Write-Host 'Selecting the Beta profile' -ForegroundColor Green
-
-        Select-MgProfile -Name Beta
-    }
+    #if ($BetaProfile -eq 'false') 
+    #{
+    #    Write-Host 'Connecting to Default Profile' -ForegroundColor Green
+    #    Select-MgProfile -Name v1.0
+    #}
+    #else 
+    #{
+    #    Write-Host 'Connecting to Beta Profile' -ForegroundColor Green
+    #    Select-MgProfile -Name beta
+    #}
     
     Write-Host 'Successfully Logged into Microsoft Graph' -ForegroundColor Green
     $Date = Get-Date -Format dd-MMMM-yyyy
@@ -212,22 +229,77 @@ header {
     padding: 10px 20px 10px 20px;
     border: 1.5px solid #ddd; 
     margin-bottom: 15px;
+    }
+.dropbtn {
+  background-color: #003366;
+  color: white;
+  padding: 16px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #b8d5e9;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown a:hover {background-color: #ddd;}
+.show {display: block;}
 </style>
 '@
 
 ##Body format with filter scripts
 $HTMLBody = @"
 <font color="Black"><h1><center>Conditional Access Policies Report - $($date)</center></h1></font>
-<font color="Black"><h2>Quick Filter:</h2></font>
-<div id="myCAQuickFilterContainer">
-  <button class="btn active" onclick="myStateFilter('all')"> Clear filters</button>
-  <button class="btn" onclick="myStateFilter('Enabled')"> Enabled</button>
-  <button class="btn" onclick="myStateFilter('Disabled')"> Disabled</button>
+<div class="dropdown">
+  <button onclick="myDropdownFunction()" class="dropbtn">Quick Filter</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#All Policies" onclick="myStateFilter('all')"> Clear filters</a>
+    <a href="#Enabled" onclick="myStateFilter('Enabled')">Enabled</a>
+    <a href="#Disabled" onclick="myStateFilter('Disabled')"> Disabled</a>
+    <a href="#Reporting" onclick="myStateFilter('EnabledForReportingButNotEnforced')"> Reporting</a>
+    <a href="#MFA Enforced" onclick="myMFAFilter('Mfa')"> MFA Enforced</a>
+  </div>
 </div>
-<font color="Black"><h2>Display Name Filter:</h2></font>
 <input type="text" id="myDisplayNameFilterID" onkeyup="myDisplayNameFilter()" placeholder="Search for Display Names..">
 <br>
 <script>
+function myDropdownFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
   function myStateFilter(a)
   {
     // Declare variables
@@ -265,6 +337,46 @@ $HTMLBody = @"
       }
     }
   }
+
+function myMFAFilter(a)
+{
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  filter = a.toUpperCase();
+  table = document.getElementById("myCATable");
+  tr = table.getElementsByTagName("tr");
+  if (a == "all")
+  {
+    for (i = 0; i < tr.length; i++)
+    {
+      td = tr[i].getElementsByTagName("td")[21];
+      if (td)
+      {
+        tr[i].style.display = "";
+      }
+    }
+  }
+  else
+  {
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++)
+    {
+      td = tr[i].getElementsByTagName("td")[21];
+      if (td)
+      {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1)
+        {
+          tr[i].style.display = "";
+        } else
+        {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+}
+
 function myDisplayNameFilter()
 {
   // Declare variables
@@ -291,6 +403,7 @@ function myDisplayNameFilter()
   }
 }
 </script>
+
 "@
 }
 
@@ -304,7 +417,7 @@ process {
     Write-Host ''
     $Report = @()
     #Collects the conditional access policies using the mgconditionalaccesspolicy command.
-    foreach ($pol in (Get-MgIdentityConditionalAccessPolicy)) {
+    foreach ($pol in (Get-MgIdentityConditionalAccessPolicy -All)) {
         $Report += New-Object PSobject -Property @{
             'Displayname'                             = $pol.displayName
             'Description'                             = $pol.Description
