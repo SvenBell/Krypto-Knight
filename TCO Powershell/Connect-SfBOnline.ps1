@@ -12,19 +12,19 @@ Connect-MicrosoftTeams #-TenantId $TenantID #Customers Tenant ID
 #Connect-AzureAD #-TenantID $TenantID
 #Import-PSSession -Session
 # Some Common Commands:
-#Get-CsOnlineUser -Identity "sip:vm-main1@entag.com.au"
-#Get-CsOnlineUser -Identity "sip:vm-Main1@entag.com.au" | fl Alias,EnterpriseVoiceEnabled,Lineuri,Hostedvoicemail,hostedvoicemailpolicy
-#Set-CsUser -Identity "sip:vm-Main1@entag.com.au" -HostedVoiceMail $true
-#Set-CsUser -Identity "sip:vm-Main1@entag.com.au" -EnterpriseVoiceEnabled $true
-#Set-CsUser -Identity "sip:vm-Main1@entag.com.au" -HostedVoiceMail $true -EnterpriseVoiceEnabled $true
-#Get-CsOnlineUser -Identity "sip:vm-Main1@entag.com.au" | fl Alias,EnterpriseVoiceEnabled,Lineuri,Hostedvoicemail,hostedvoicemailpolicy
+#Get-CsOnlineUser -Identity "sip:vm-main1@xxxx.com.au"
+#Get-CsOnlineUser -Identity "sip:vm-Main1@xxxx.com.au" | fl Alias,EnterpriseVoiceEnabled,Lineuri,Hostedvoicemail,hostedvoicemailpolicy
+#Set-CsUser -Identity "sip:vm-Main1@xxxx.com.au" -HostedVoiceMail $true
+#Set-CsUser -Identity "sip:vm-Main1@xxxx.com.au" -EnterpriseVoiceEnabled $true
+#Set-CsUser -Identity "sip:vm-Main1@xxxx.com.au" -HostedVoiceMail $true -EnterpriseVoiceEnabled $true
+#Get-CsOnlineUser -Identity "sip:vm-Main1@xxxx.com.au" | fl Alias,EnterpriseVoiceEnabled,Lineuri,Hostedvoicemail,hostedvoicemailpolicy
 #
-#Set-CsOnlineVoiceUser -id s.rideout@abacusdx.com -TelephoneNumber +61733867913 -Verbose
+#Set-CsOnlineVoiceUser -id xxx.xxx@XXXX.qld.gov.au -TelephoneNumber +61733867913 -Verbose
 #
 #Write-Host "Hello."
 #Write-Output $test
-#$test = Get-CsOnlineUser -Identity "sip:vm-Main1@entag.com.au" | fl Alias,EnterpriseVoiceEnabled,Lineuri,Hostedvoicemail,hostedvoicemailpolicy
-#Get-CsOnlineUser -Identity "sip:vm-Main1@entag.com.au" | fl Alias,EnterpriseVoiceEnabled,Lineuri,Hostedvoicemail,hostedvoicemailpolicy
+#$test = Get-CsOnlineUser -Identity "sip:vm-Main1@xxxx.com.au" | fl Alias,EnterpriseVoiceEnabled,Lineuri,Hostedvoicemail,hostedvoicemailpolicy
+#Get-CsOnlineUser -Identity "sip:vm-Main1@xxxx.com.au" | fl Alias,EnterpriseVoiceEnabled,Lineuri,Hostedvoicemail,hostedvoicemailpolicy
 #
 #Get-CsCallingLineIdentity |fl
 #
@@ -82,9 +82,9 @@ Connect-MicrosoftTeams #-TenantId $TenantID #Customers Tenant ID
 ######################################
 # Assign and AutoAttendant a number:
 ######################################
-#Get-CsOnlineApplicationInstance -Identity aa-healthyminds-q@ncphn.org.au |fl
+#Get-CsOnlineApplicationInstance -Identity aa-xxx.xxx@XXXX.qld.gov.au |fl
 #
-#Set-CsOnlineVoiceApplicationInstance -Identity aa-healthyminds-q@ncphn.org.au -TelephoneNumber "61266591822"
+#Set-CsOnlineVoiceApplicationInstance -Identity aa-xxx.xxx@XXXX.qld.gov.au -TelephoneNumber "61266591822"
 #
 #Good user overview onliner
 #Get-CsOnlineUser stephen.bell@entag.com.au | Format-List UserPrincipalName, DisplayName, SipAddress, Enabled, TeamsUpgradeEffectiveMode, `EnterpriseVoiceEnabled, HostedVoiceMail, City, UsageLocation, DialPlan, TenantDialPlan, OnlineVoiceRoutingPolicy, `LineURI, OnPremLineURI, OnlineAudioConferencingRoutingPolicy, OnlineDialOutPolicy, TeamsVideoInteropServicePolicy, TeamsCallingPolicy, HostingProvider, `InterpretedUserType, VoicePolicy, TeamsIPPhonePolicy
@@ -138,11 +138,11 @@ Connect-MicrosoftTeams #-TenantId $TenantID #Customers Tenant ID
 #refer: https://learn.microsoft.com/en-us/microsoftteams/devices/Teams-Android-devices-user-interface#override-automatic-user-interface-detection
 #as Meeting sign in mode will require E3 or E5 or Meeting room license as opposed to just Common Are license.
 #
-#Grant-CsTeamsIPPhonePolicy -Identity meetingRm-Councillor@sjshirewagovau.onmicrosoft.com -PolicyName "CommonAreaPhone"
+#Grant-CsTeamsIPPhonePolicy -Identity meetingRm-xxx.xxx@XXXX.qld.gov.au -PolicyName "CommonAreaPhone"
 #or,
 #Grant-CsTeamsIPPhonePolicy –Identity 'conf-adams@contoso.com' –PolicyName 'Meeting Sign In'
 #
-#Get-CsOnlineUser -Identity meetingRm-Councillor@sjshirewagovau.onmicrosoft.com | Select-Object TeamsIPPhonePolicy
+#Get-CsOnlineUser -Identity meetingRm-xxx.xxx@XXXX.qld.gov.au | Select-Object TeamsIPPhonePolicy
 
 ######################################
 # get-CsTeamsCallingPolicy -id "Global"
@@ -163,10 +163,10 @@ Connect-MicrosoftTeams #-TenantId $TenantID #Customers Tenant ID
 #Get-CsCallqueue -first 100 | select-object Name,Identity,ApplicationInstances,RoutingMethod,DistributionLists,Agents,AgentsInSyncWithDistributionLists,AllowOptOut,AgentsCapped,AgentAlertTime,OverflowThreshold,OverflowAction,@{Label="OverflowactionTarget";Expression={($_.OverflowactionTarget.Id)}}, @{Label="TimeoutActionTarget";Expression={($_.TimeoutActionTarget.Id)}} |export-csv -notypeinformation -append "C:\temp\ADGCEcqdata.csv" 
 #
 #$allNumbers = Get-CsOnlineTelephoneNumber -ResultSize 2147483647
-#$allNumbers | Export-CSV c:\tools\ENTAG-Full-Directory.csv -NoTypeInformation
+#$allNumbers | Export-CSV c:\tools\XXXX-Full-Directory.csv -NoTypeInformation
 #
 #$allNumbers = Get-CsPhoneNumberAssignment
-#$allNumbers | Export-CSV c:\tools\ENTAG-Full-Directory.csv -NoTypeInformation
+#$allNumbers | Export-CSV c:\tools\XXXX-Full-Directory.csv -NoTypeInformation
 #
 #https://msunified.net/2021/08/18/find-available-phone-numbers-with-get-teamsnumbers-ps1/
 #
@@ -181,7 +181,7 @@ Connect-MicrosoftTeams #-TenantId $TenantID #Customers Tenant ID
 #Check users for onpremise Issue
 ################################
 #Get-CsOnlineUser -Filter {OnPremLineURIManuallySet -eq $False -and EnterpriseVoiceEnabled -eq $true}  |  Format-Table UserPrincipalName, LineURI, OnPremLineURI, VoicePolicy, OnPremLineURIManuallySet, EnterpriseVoiceEnabled
-#Get-CsOnlineUser h.messenger@abacusdx.com | Format-List UserPrincipalName, DisplayName, SipAddress, Enabled, TeamsUpgradeEffectiveMode, `EnterpriseVoiceEnabled, HostedVoiceMail, City, UsageLocation, DialPlan, TenantDialPlan, OnlineVoiceRoutingPolicy, `LineURI, OnPremLineURI, OnlineDialinConferencingPolicy, TeamsVideoInteropServicePolicy, TeamsCallingPolicy, HostingProvider, `InterpretedUserType, VoicePolicy
+#Get-CsOnlineUser xxx.xxx@XXXX.qld.gov.au | Format-List UserPrincipalName, DisplayName, SipAddress, Enabled, TeamsUpgradeEffectiveMode, `EnterpriseVoiceEnabled, HostedVoiceMail, City, UsageLocation, DialPlan, TenantDialPlan, OnlineVoiceRoutingPolicy, `LineURI, OnPremLineURI, OnlineDialinConferencingPolicy, TeamsVideoInteropServicePolicy, TeamsCallingPolicy, HostingProvider, `InterpretedUserType, VoicePolicy
 #
 
 #######################################
@@ -189,16 +189,16 @@ Connect-MicrosoftTeams #-TenantId $TenantID #Customers Tenant ID
 #######################################
 #Get-CsOnlineDialOutPolicy
 #
-#Get-CsOnlineUser kaleb.toigo@tbtcbrisbanecity.com.au | Format-List UserPrincipalName, DisplayName, EnterpriseVoiceEnabled, DialPlan, LineURI, OnlineDialOutPolicy
+#Get-CsOnlineUser xxx.xxx@XXXX.qld.gov.au | Format-List UserPrincipalName, DisplayName, EnterpriseVoiceEnabled, DialPlan, LineURI, OnlineDialOutPolicy
 #
 #Make Outbound calls domestic only as global default - Can assign individual users international as required
 #Grant-CsDialoutPolicy -PolicyName DialoutCPCInternationalPSTNDomestic  -Global
 #
 #Grant-CsDialoutPolicy -Identity <username> -PolicyName <policy name>
 #
-#Grant-CsDialoutPolicy -identity Uheina.McDonald@qfcc.qld.gov.au -PolicyName Global
-#Grant-CsDialoutPolicy -identity Uheina.McDonald@qfcc.qld.gov.au -PolicyName DialoutCPCDisabledPSTNDomestic
-#Grant-CsDialoutPolicy -identity Uheina.McDonald@qfcc.qld.gov.au -PolicyName DialoutCPCandPSTNInternational
+#Grant-CsDialoutPolicy -identity xxx.xxx@XXXX.qld.gov.au -PolicyName Global
+#Grant-CsDialoutPolicy -identity xxx.xxx@XXXX.qld.gov.au -PolicyName DialoutCPCDisabledPSTNDomestic
+#Grant-CsDialoutPolicy -identity xxx.xxx@XXXX.qld.gov.au -PolicyName DialoutCPCandPSTNInternational
 
 ######################################
 # Block specific in bound numbers
@@ -269,7 +269,7 @@ Connect-MicrosoftTeams #-TenantId $TenantID #Customers Tenant ID
 #############################################
 # Set user's call settings to forward to a CQ
 #
-# Set-CsUserCallingSettings -Identity stephen.bell@entag.com.au -IsUnansweredEnabled $true -UnansweredTargetType SingleTarget -UnansweredTarget sip:CQ-Stephen-Test1@entag.com.au -UnansweredDelay 00:00:20
+# Set-CsUserCallingSettings -Identity xxx.xxx@XXXX.qld.gov.au -IsUnansweredEnabled $true -UnansweredTargetType SingleTarget -UnansweredTarget sip:CQ-xxx.xxx@XXXX.qld.gov.au -UnansweredDelay 00:00:20
 #
 
 #############################################
