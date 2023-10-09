@@ -221,6 +221,7 @@ ForEach ($user in $users) {
     $upn = $user.UPN
     $number = $user.Number
     $PhoneNumberType = $user.PhoneNumberType
+	#$PhoneNumberType = "OperatorConnect"   # Options: CallingPlan, OperatorConnect, DirectRouting
     $Location = $user.Location
     $i = $i + 1
     $error.clear()
