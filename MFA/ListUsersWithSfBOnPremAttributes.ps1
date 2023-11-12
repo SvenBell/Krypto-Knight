@@ -1,0 +1,1 @@
+﻿Get-ADuser -Properties msRTCSIP-DeploymentLocator,msRTCSIP-PrimaryHomeServer,msRTCSIP-UserEnabled -Filter {msRTCSIP-DeploymentLocator -eq "SRV:" -and msRTCSIP-UserEnabled -notlike '*' -and msRTCSIP-PrimaryHomeServer -notlike '*'} | Set-ADUser -Clear msRTCSIP-DeploymentLocator
