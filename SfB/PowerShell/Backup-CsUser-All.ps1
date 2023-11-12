@@ -1,0 +1,1 @@
+﻿Get-CsUser | Sort SipAddress | Export-Csv -Path  "c:\backup\SfbAllUserSettings.csv"
